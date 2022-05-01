@@ -1,10 +1,20 @@
-import React from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 import { Button } from "react-bootstrap";
+import Products from "../Products/Products";
 import "./Home.css";
 const Home = () => {
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get("https://evening-mesa-55779.herokuapp.com/inventory")
+      .then((response) => setProducts(response.data));
+  }, []);
+
   return (
-    <div id="hero">
-      <section className="hero d-flex align-items-center">
+    <div>
+      <section id="hero" className="hero d-flex align-items-center">
         <div className="container">
           <div className="row">
             <div className="col-lg-6 d-flex flex-column justify-content-center">
@@ -17,7 +27,7 @@ const Home = () => {
               <div data-aos="fade-down" data-aos-delay="600">
                 <div className="text-center my-3 text-lg-start">
                   <Button>
-                    Get Start <i class="bi bi-arrow-right"></i>
+                    Get Start <i className="bi bi-arrow-right"></i>
                   </Button>
                 </div>
               </div>
@@ -60,7 +70,7 @@ const Home = () => {
                 </p>
                 <div className="text-center text-lg-start">
                   <Button>
-                    Read more <i class="bi bi-arrow-right"></i>
+                    Read more <i className="bi bi-arrow-right"></i>
                   </Button>
                 </div>
               </div>
@@ -136,7 +146,7 @@ const Home = () => {
                   className="img-fluid"
                   alt=""
                 />
-                <h3>modern management tools</h3>
+                <h3>Modern management tools</h3>
                 <p>
                   You always need to innovate store management processes and
                   streamline them in the long term. However, human error is
@@ -145,6 +155,22 @@ const Home = () => {
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section className="container">
+        <header className="section-header">
+          <h2>Inventory</h2>
+          <p>Top selling Products</p>
+        </header>
+        <div
+          className="product-container"
+          data-aos="fade-up-left"
+          data-aos-delay="600"
+        >
+          {products.slice(0, 6).map((product) => (
+            <Products product={product}></Products>
+          ))}
         </div>
       </section>
 

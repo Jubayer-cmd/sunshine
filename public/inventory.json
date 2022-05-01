@@ -1,0 +1,162 @@
+[
+  {
+    "name": "Chuwi HeroBook Pro",
+    "supplier": "StarTech",
+    "price": "$2,793.44",
+    "quantity": "30",
+    "images": "https://www.startech.com.bd/image/cache/catalog/laptop/chuwi/herobook/herobook-pro/herobook-pro-1-500x500.jpg",
+    "description": "Intel Celeron Processor N4020 (4M Cache, 1.10 GHz up to 2.80 GHz)8GB LPDDR4 RAM 256GB SSD 14.1 Inch(1920 x 1080) IPS Anti-Glare Display"
+  },
+  {
+    "name": "iPad",
+    "supplier": "UCC",
+    "price": "$2,688.15",
+    "quantity": "40",
+    "images": "https://www.startech.com.bd/image/cache/catalog/tablet-pc/apple/apple-ipad-space%20gray/apple-ipad-space%20gray-01-500x500.jpg",
+    "description": "Display: 10.2 Retina display with True Tone A13 Bionic chip with Neural Engine Apple GPU (4-core graphics) Supports Apple Pencil"
+  },
+  {
+    "name": "Asus VP249QGR",
+    "supplier": "TechLand",
+    "price": "$3,618.95",
+    "quantity": "50",
+    "images": "https://www.startech.com.bd/image/cache/catalog/monitor/asus/vp249qgr/vp249qgr-500x500.jpg",
+    "description": "23.8 inch Full HD (1920x1080), Display Up to 144Hz Refresh Rate Asus Extreme Low Motion Blur Supports, Adaptive-Sync NVIDIA GeForce"
+  },
+  {
+    "name": "Canon Eos 4000D",
+    "supplier": "Global BD",
+    "price": "$1,737.67",
+    "quantity": "125",
+    "images": "https://www.startech.com.bd/image/cache/catalog/camera/dslr-camera/canon/4000d/4000d-1-500x500.jpg",
+    "description": "18 megapixel APS-C sensor,Aspect Ratio 3:2,Lens Mount EF/EF-S"
+  },
+  {
+    "name": "Samsung 50AU8000",
+    "supplier": "Skytech",
+    "price": "$2,451.30",
+    "quantity": "89",
+    "images": "https://www.startech.com.bd/image/cache/catalog/television/samsung/au8000/au8000-001-500x500.jpg",
+    "description": "Crystal Processor 4K, AirSlim Design UHD 4K (3840 x 2160) Display Built-in Voice Assistant,One Billion Color ,Ambient Mode, Game Mode"
+  },
+  {
+    "name": "Xiaomi Haylou",
+    "supplier": "StarTech",
+    "price": "$1,733.62",
+    "quantity": "299",
+    "images": "https://www.startech.com.bd/image/cache/catalog/watch/xiaomi/haylou-ls02/haylou-ls02-500x500.jpeg",
+    "description": "12 sports modes,20 days of endurance,Intelligent sleep monitoring,Real-time heart rate monitoring"
+  },
+  {
+    "name": "Gree GS-18LM410 1.5 Ton",
+    "supplier": "MDAKS",
+    "price": "$3,994.29",
+    "quantity": "40",
+    "images": "https://www.startech.com.bd/image/cache/catalog/air-conditioner/gree/gs-12lm410/gs-12lm410-01-500x500.jpg",
+    "description": "Cold Plasma Generator (18,000 BTU),Golden Fin Condenser,Powerful & Tropical Compressor,Copper Pipe Efficient & Quiet Design"
+  },
+  {
+    "name": " Logitech Z906",
+    "supplier": "Logitech",
+    "price": "$2,537.96",
+    "quantity": "152",
+    "images": "https://www.startech.com.bd/image/cache/catalog/Speaker/z906-gallery-500x500.png",
+    "description": "AMAZING SURROUND SOUND,1000 WATTS OF POWERFUL SOUND,INTEGRATED CONTROLS"
+  },
+  {
+    "name": "Cheerlux C8 1800 Lumens",
+    "supplier": "LandMind",
+    "price": "$2,922.64",
+    "quantity": "25",
+    "images": "https://www.startech.com.bd/image/cache/catalog/projector/cheerlux/c8-1800-lumens-wi-fi/cheerlux-c8-wifi-01-500x500.jpg",
+    "description": "Multiple interfaces for multiple devices,Built-in TV Card, contrast ratio: 2000:1,Brightness:1800 lumens,Lamp Life: 50000 Hours"
+  },
+  {
+    "name": "Canon Pixma iP 2770",
+    "supplier": "StarTech",
+    "price": "$2,190.26",
+    "quantity": "77",
+    "images": "https://www.startech.com.bd/image/cache/catalog/printer/Canon/ip-2770/ip-2770-1-500x500.jpg",
+    "description": "Speed: Black/Color- 7/4.8ipm,Resolution:4800 x 1200dpi,Connectivity:USB2.0 Hi-Speed"
+  },
+  {
+    "name": "ASRock DeskMini H470",
+    "supplier": "Ryans",
+    "price": "$2,441.67",
+    "quantity": "36",
+    "images": "https://www.startech.com.bd/image/cache/catalog/desktop-pc/mini-pc/asrock/deskmini-h470/deskmini-h470-01-500x500.jpg",
+    "description": "Type-C, USB, Ultra M.2 PCIe, Hyper M.2 PCIe, 2.5 HDD/SSD, M.2 Wi-Fi Slot, Supports 10th/11th Gen Intel Processors (LGA1200), Dual DDR4-2933MHz SO-DIMMs,2 x DisplayPort, HDMI & D-Sub"
+  },
+  {
+    "name": "Asus RT-AC1200 V2",
+    "supplier": "StarTech",
+    "price": "$1,393.12",
+    "quantity": "254",
+    "images": "https://www.startech.com.bd/image/cache/catalog/networking/router/asus/ac1200-v2/ac1200-v2-1-500x500.jpg",
+    "description": "External antenna x 4,2.4 GHz and 5 GHz bands,300+867 Mbps,Dual WAN function"
+  },
+  {
+    "name": "Lenovo HE05 Neckband",
+    "supplier": "Demos",
+    "price": "$3,867.63",
+    "quantity": "488",
+    "images": "https://www.startech.com.bd/image/cache/catalog/earphone/lenovo/HE05/Lenovo-HE05-Neckband-Bluetooth-Headset-1-500x500.jpg",
+    "description": "Bluetooth version: 5.0,Transmission distance: 10m,Waterproof: IPX5 Working time: 8 hours"
+  },
+  {
+    "name": "Samsung Galaxy Tab A7",
+    "supplier": "TechLand",
+    "price": "$1,638.64",
+    "quantity": "65",
+    "images": "https://www.startech.com.bd/image/cache/catalog/tablet/samsung/galaxy-tab-a7-lte/galaxy-tab-a7-lte-black-01-500x500.jpg",
+    "description": "Display: 10.4 inches, 2000 x 1200 (WUXGA+) TFT,Storage: 3GB RAM, 32GB ROM,CPU: Snapdragon 662, GPU: Adreno 610,Battery: 7040 mAh, 15W Fast charging"
+  },
+  {
+    "name": "Intel Pentium Gold G6400",
+    "supplier": "UCC",
+    "price": "$3,899.35",
+    "quantity": "181",
+    "images": "https://www.startech.com.bd/image/cache/catalog/processor/Intel/g6400/g6400-500x500.jpg",
+    "description": "Socket Supported FCLGA1200,Speed 4.00 GHz,Cores- 2 & Threads- 4,4M Intel Smart Cache"
+  },
+  {
+    "name": "Gigabyte GA-A320M",
+    "supplier": "SkyLand",
+    "price": "$3,660.64",
+    "quantity": "63",
+    "images": "https://www.startech.com.bd/image/cache/catalog/motherboard/gigabyte/ga-a320m-s2h/ga-a320m-s2h-1-500x500.jpg",
+    "description": "CPU: AMD Ryzen, Chipset: AMD A320,Memory: 2 x DDR4, Max 32 GB,3 x PCI Express slots"
+  },
+  {
+    "name": "Gigabyte GeForce GTX 1650",
+    "supplier": "GIGA",
+    "price": "$3,747.32",
+    "quantity": "69",
+    "images": "https://www.startech.com.bd/image/cache/catalog/graphics-card/gigabyte/gtx-1650-oc-low-profile-4g/gtx-1650-oc-low-profile-4g-01-500x500.jpg",
+    "description": "Core Clock: 1695 MHz (Reference Card: 1665 MHz),Integrated with 4GB GDDR5 128bit memory,Low profile design with 167mm card length,Supports up to 3 displays"
+  },
+  {
+    "name": "Fantech Aero CG80 RGB",
+    "supplier": "TECH",
+    "price": "$1,523.87",
+    "quantity": "255",
+    "images": "https://www.startech.com.bd/image/cache/catalog/casing/fantech/aero-cg80/aero-cg80-01-500x500.jpg",
+    "description": "Compatibility: ATX / Mini-ITX / Micro-ATX,Support Up To 8x120mm Fan,Includes 4psc Rainbow LED Fan,Side Tempered Glass"
+  },
+  {
+    "name": "ADATA SU650 120GB",
+    "supplier": "MSI",
+    "price": "$1,978.60",
+    "quantity": "974",
+    "images": "https://www.startech.com.bd/image/cache/catalog/component/ssd/adata/su650/120gb/120gb-1-500x500.jpg",
+    "description": "Capacity : 120GB,Form Factor : M.2 2280,NAND Flash : 3D TLC,Interface : SATA 6Gb/s"
+  },
+  {
+    "name": "Windows 11 Professional",
+    "supplier": "Microsoft",
+    "price": "$2,824.78",
+    "quantity": "365",
+    "images": "https://www.startech.com.bd/image/cache/catalog/software/operating-system/windows-11-pro/windows-11-pro-02-500x500.jpg",
+    "description": "Processor: 1 gigahertz (GHz) or faster with 2 or more cores,Memory: 4 GB RAM, Storage: 64 GB or larger storage,Trusted Platform Module (TPM) version: 2.0,License Type: Perpetual (Life Time)"
+  }
+]
