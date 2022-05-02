@@ -1,6 +1,8 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Button } from "react-bootstrap";
+import CountUp from "react-countup";
+import ReactVisibilitySensor from "react-visibility-sensor";
 import Products from "../Products/Products";
 import "./Home.css";
 const Home = () => {
@@ -78,8 +80,8 @@ const Home = () => {
 
             <div
               className="col-lg-6 d-flex align-items-center"
-              data-aos="fade-left"
-              data-aos-delay="200"
+              data-aos="zoom-out-left"
+              data-aos-duration="3000"
             >
               <img
                 src="https://img.freepik.com/free-vector/logistic-workers-carrying-boxes-with-loaders_74855-6541.jpg?t=st=1651397689~exp=1651398289~hmac=987c9400f6992d1799795727920b09381aa83b3dfb732b83e4c58c53396bb5c3&w=740"
@@ -185,6 +187,13 @@ const Home = () => {
               >
                 <i className="bi bi-emoji-smile"></i>
                 <div>
+                  <CountUp end={36} redraw={true} suffix="+">
+                    {({ countUpRef, start }) => (
+                      <ReactVisibilitySensor onChange={start} delayedCall>
+                        <span ref={countUpRef} />
+                      </ReactVisibilitySensor>
+                    )}
+                  </CountUp>
                   <p>Happy Clients</p>
                 </div>
               </div>
@@ -198,6 +207,13 @@ const Home = () => {
               >
                 <i className="bi bi-journal-richtext"></i>
                 <div>
+                  <CountUp end={24} redraw={true} suffix="+">
+                    {({ countUpRef, start }) => (
+                      <ReactVisibilitySensor onChange={start} delayedCall>
+                        <span ref={countUpRef} />
+                      </ReactVisibilitySensor>
+                    )}
+                  </CountUp>
                   <p>Projects</p>
                 </div>
               </div>
@@ -211,6 +227,13 @@ const Home = () => {
               >
                 <i className="bi bi-headset"></i>
                 <div>
+                  <CountUp end={80} redraw={true} suffix="+">
+                    {({ countUpRef, start }) => (
+                      <ReactVisibilitySensor onChange={start} delayedCall>
+                        <span ref={countUpRef} />
+                      </ReactVisibilitySensor>
+                    )}
+                  </CountUp>
                   <p>Hours Of Support</p>
                 </div>
               </div>
@@ -224,6 +247,13 @@ const Home = () => {
               >
                 <i className="bi bi-people"></i>
                 <div>
+                  <CountUp end={20} redraw={true} suffix="+">
+                    {({ countUpRef, start }) => (
+                      <ReactVisibilitySensor onChange={start} delayedCall>
+                        <span ref={countUpRef} />
+                      </ReactVisibilitySensor>
+                    )}
+                  </CountUp>
                   <p>Hard Workers</p>
                 </div>
               </div>
@@ -252,6 +282,145 @@ const Home = () => {
             </div>
           </div>
         </div>
+      </div>
+
+      <div data-aos="fade-up" data-aos-easing="linear" data-aos-duration="2000">
+        <footer
+          class="text-center text-lg-start text-white"
+          style={{ backgroundColor: "#929fba" }}
+        >
+          <div class="container p-4 pb-0">
+            <section class="">
+              <div class="row">
+                <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+                  <h6 class="text-uppercase mb-4 font-weight-bold">GADGET-X</h6>
+                  <p>
+                    The term in brief: Warehouse technology deals with the
+                    storage and commissioning of goods. It is part of
+                    intralogistics and closely linked to materials handling and
+                    packaging technology
+                  </p>
+                </div>
+
+                <hr class="w-100 clearfix d-md-none" />
+
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+                  <h6 class="text-uppercase mb-4 font-weight-bold">Products</h6>
+                  <p>
+                    <a href="/" class="text-white">
+                      LINK 1
+                    </a>
+                  </p>
+                  <p>
+                    <a href="/" class="text-white">
+                      LINK 2
+                    </a>
+                  </p>
+                  <p>
+                    <a href="/" class="text-white">
+                      LINK 3
+                    </a>
+                  </p>
+                  <p>
+                    <a href="/" class="text-white">
+                      LINK 4
+                    </a>
+                  </p>
+                </div>
+
+                <hr class="w-100 clearfix d-md-none" />
+
+                <hr class="w-100 clearfix d-md-none" />
+
+                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+                  <h6 class="text-uppercase mb-4 font-weight-bold">Contact</h6>
+                  <p>
+                    <i class="bi bi-house mr-3"></i> Gulistan, Dhaka, Bangladesh
+                  </p>
+                  <p>
+                    <i class="bi bi-envelope mr-3"></i> info@gmail.com
+                  </p>
+                  <p>
+                    <i class="bi bi-phone mr-3"></i> 0177777
+                  </p>
+                  <p>
+                    <i class="bi bi-printer mr-3"></i> 0155555
+                  </p>
+                </div>
+
+                <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
+                  <h6 class="text-uppercase mb-4 font-weight-bold">
+                    Follow us
+                  </h6>
+
+                  <a
+                    class="btn btn-primary btn-floating m-1"
+                    style={{ backgroundColor: "#3b5998" }}
+                    href="/"
+                    role="button"
+                  >
+                    <i class="bi bi-facebook"></i>
+                  </a>
+
+                  <a
+                    class="btn btn-primary btn-floating m-1"
+                    style={{ backgroundColor: "#55acee" }}
+                    href="/"
+                    role="button"
+                  >
+                    <i class="bi bi-twitter"></i>
+                  </a>
+
+                  <a
+                    class="btn btn-primary btn-floating m-1"
+                    style={{ backgroundColor: "#dd4b39" }}
+                    href="/"
+                    role="button"
+                  >
+                    <i class="bi bi-google"></i>
+                  </a>
+
+                  <a
+                    class="btn btn-primary btn-floating m-1"
+                    style={{ backgroundColor: "#ac2bac" }}
+                    href="/"
+                    role="button"
+                  >
+                    <i class="bi bi-instagram"></i>
+                  </a>
+
+                  <a
+                    class="btn btn-primary btn-floating m-1"
+                    style={{ backgroundColor: "#0082ca" }}
+                    href="/"
+                    role="button"
+                  >
+                    <i class="bi bi-linkedin"></i>
+                  </a>
+
+                  <a
+                    class="btn btn-primary btn-floating m-1"
+                    style={{ backgroundColor: "#333333" }}
+                    href="/"
+                    role="button"
+                  >
+                    <i class="bi bi-github"></i>
+                  </a>
+                </div>
+              </div>
+            </section>
+          </div>
+
+          <div
+            class="text-center p-3"
+            style={{ backgroundColor: "rgba(0, 0, 0, 0.2)" }}
+          >
+            © 2022 Copyright:{" "}
+            <a class="text-white" href="/">
+              gadgetx.com
+            </a>
+          </div>
+        </footer>
       </div>
     </div>
   );
