@@ -34,14 +34,14 @@ const Header = () => {
               </NavLink>
               <NavLink
                 as={Link}
-                to="/Items"
+                to="/manage"
                 className={({ isActive }) =>
                   isActive
                     ? "fs-5 text-warning px-2"
                     : "fs-5 text-white text-decoration-none px-2"
                 }
               >
-                Items
+                Manage Items
               </NavLink>
               <NavLink
                 as={Link}

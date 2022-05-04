@@ -1,9 +1,13 @@
 import React from "react";
-import { Card, ListGroup, ListGroupItem } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Button, Card, ListGroup, ListGroupItem } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 
 const Products = ({ product }) => {
-  const { name, supplier, price, quantity, images, description } = product;
+  const { _id, name, supplier, price, quantity, images, description } = product;
+  const navigate = useNavigate();
+  const navigateToGadgetDetail = (id) => {
+    navigate(`/inventory/${id}`);
+  };
   return (
     <div>
       <Card style={{ width: "20rem" }}>
@@ -18,7 +22,7 @@ const Products = ({ product }) => {
           <ListGroupItem>Quantity: {quantity}</ListGroupItem>
         </ListGroup>
         <Card.Body className="text-center">
-          <Link to="/inventory">Manage</Link>
+          <Button onClick={() => navigateToGadgetDetail(_id)}>Update</Button>
         </Card.Body>
       </Card>
     </div>
