@@ -55,7 +55,11 @@ const Inventory = () => {
       });
   };
   return (
-    <div className="d-flex justify-content-center my-5">
+    <div
+      className="d-flex justify-content-center my-5"
+      data-aos="fade-up"
+      data-aos-delay="400"
+    >
       <Card style={{ width: "20rem" }}>
         <Card.Img variant="top" src={images} />
         <Card.Body>
