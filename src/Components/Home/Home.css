@@ -7,7 +7,7 @@ body {
   color: #444444;
 }
 .hid {
-  background-color: #808df5;
+  background-color: #012970;
 }
 
 /*--------------------------------------------------------------
@@ -221,4 +221,9 @@ section {
   .product-container {
     grid-template-columns: repeat(2, 1fr);
   }
+}
+
+.heightvh {
+  min-height: 1vh;
+  height: auto;
 }

@@ -26,7 +26,7 @@ const ManageItem = ({ product, setProduct }) => {
     }
   };
   return (
-    <tbody data-aos="fade-down" data-aos-delay="400">
+    <tbody data-aos="fade-down">
       <tr>
         <td>
           <img src={images} width={"100px"} alt="" />

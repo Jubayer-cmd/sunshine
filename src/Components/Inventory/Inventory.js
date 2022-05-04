@@ -54,12 +54,14 @@ const Inventory = () => {
       .then((res) => res.json())
       .then((data) => {
         alert("donme");
+        event.target.reset();
         const newGadgets = { ...gadgets, quantity: newQuantity };
         setGadgets(newGadgets);
       });
   };
   return (
     <div
+      style={{ height: "140vh" }}
       className="d-flex justify-content-center my-5"
       data-aos="fade-up"
       data-aos-delay="400"
