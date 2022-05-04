@@ -1,13 +1,17 @@
 import React, { useEffect, useState } from "react";
 import { Button, Card, ListGroup, ListGroupItem } from "react-bootstrap";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 const Inventory = () => {
   const { id } = useParams();
   const [gadgets, setGadgets] = useState({});
+  const navigate = useNavigate();
+  const navigateToManage = () => {
+    navigate("/manage");
+  };
   const { name, supplier, price, quantity, images, description } = gadgets;
   useEffect(() => {
-    const url = `http://localhost:5000/inventory/${id}`;
+    const url = `https://evening-mesa-55779.herokuapp.com/inventory/${id}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setGadgets(data));
@@ -17,7 +21,7 @@ const Inventory = () => {
     const newQuantity = parseInt(quantity) - 1;
     const makeQuantity = { newQuantity };
     //send data to the server
-    const url = `http://localhost:5000/inventory/${id}`;
+    const url = `https://evening-mesa-55779.herokuapp.com/inventory/${id}`;
     fetch(url, {
       method: "PATCH",
       headers: {
@@ -39,7 +43,7 @@ const Inventory = () => {
     const makeQuantity = { newQuantity };
     console.log(makeQuantity);
     //send data to the server
-    const url = `http://localhost:5000/inventory/${id}`;
+    const url = `https://evening-mesa-55779.herokuapp.com/inventory/${id}`;
     fetch(url, {
       method: "PATCH",
       headers: {
@@ -73,6 +77,9 @@ const Inventory = () => {
         </ListGroup>
         <Card.Body className="text-center">
           <Button onClick={() => handleDelivery()}>Deliverd</Button>
+          <Button className="bg-success mx-2" onClick={navigateToManage}>
+            Manage Inventories
+          </Button>
         </Card.Body>
         <form className="text-center m-2" onSubmit={handlesubmit}>
           <label htmlFor="quantity">Restock the items</label>

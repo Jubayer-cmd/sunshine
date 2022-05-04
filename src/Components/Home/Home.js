@@ -2,11 +2,16 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Button } from "react-bootstrap";
 import CountUp from "react-countup";
+import { useNavigate } from "react-router-dom";
 import ReactVisibilitySensor from "react-visibility-sensor";
 import Products from "../Products/Products";
 import "./Home.css";
 const Home = () => {
   const [products, setProducts] = useState([]);
+  const navigate = useNavigate();
+  const navigateToManage = () => {
+    navigate("/manage");
+  };
 
   useEffect(() => {
     axios
@@ -174,11 +179,16 @@ const Home = () => {
             <Products product={product}></Products>
           ))}
         </div>
+        <div className="text-center mt-5">
+          <Button className="bg-success" onClick={navigateToManage}>
+            Manage Inventories
+          </Button>
+        </div>
       </section>
 
       <section id="counts" className="counts text-center">
         <div className="container" data-aos="fade-up">
-          <div className="row gy-4">
+          <div className="row gy-2">
             <div className="col-lg-3 col-md-6">
               <div
                 className="count-box"

@@ -45,14 +45,14 @@ const Header = () => {
               </NavLink>
               <NavLink
                 as={Link}
-                to="/about"
+                to="/additems"
                 className={({ isActive }) =>
                   isActive
                     ? "fs-5 text-warning px-2"
                     : "fs-5 text-white text-decoration-none px-2"
                 }
               >
-                About
+                Add Items
               </NavLink>
             </Nav>
           </Navbar.Collapse>
