@@ -10,7 +10,7 @@ const Products = ({ product }) => {
   };
   return (
     <div data-aos="fade-up" data-aos-delay="400">
-      <Card style={{ width: "20rem" }}>
+      <Card className="shadow" style={{ width: "20rem" }}>
         <Card.Img variant="top" src={images} />
         <Card.Body>
           <Card.Title>{name}</Card.Title>

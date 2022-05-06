@@ -1,8 +1,17 @@
+import { signOut } from "firebase/auth";
 import React from "react";
 import { Container, Nav, Navbar } from "react-bootstrap";
+import { useAuthState } from "react-firebase-hooks/auth";
 import { Link, NavLink } from "react-router-dom";
+import { toast } from "react-toastify";
+import auth from "./../../firebase.init";
 
 const Header = () => {
+  const [user] = useAuthState(auth);
+  const logout = () => {
+    signOut(auth);
+    toast("Logging Out successfully");
+  };
   return (
     <div className="hid">
       <Navbar collapseOnSelect expand="lg" sticky="top" variant="dark">
@@ -34,28 +43,6 @@ const Header = () => {
               </NavLink>
               <NavLink
                 as={Link}
-                to="/manage"
-                className={({ isActive }) =>
-                  isActive
-                    ? "fs-5 text-warning px-3"
-                    : "fs-5 text-white text-decoration-none px-3"
-                }
-              >
-                Manage Items
-              </NavLink>
-              <NavLink
-                as={Link}
-                to="/additems"
-                className={({ isActive }) =>
-                  isActive
-                    ? "fs-5 text-warning px-3"
-                    : "fs-5 text-white text-decoration-none px-3"
-                }
-              >
-                Add Items
-              </NavLink>
-              <NavLink
-                as={Link}
                 to="/blogs"
                 className={({ isActive }) =>
                   isActive
@@ -65,17 +52,68 @@ const Header = () => {
               >
                 Blogs
               </NavLink>
-              <NavLink
-                as={Link}
-                to="/register"
-                className={({ isActive }) =>
-                  isActive
-                    ? "fs-5 text-warning px-3"
-                    : "fs-5 text-white text-decoration-none px-3"
-                }
-              >
-                SignUp
-              </NavLink>
+              {user ? (
+                <>
+                  {" "}
+                  <NavLink
+                    as={Link}
+                    to="/manage"
+                    className={({ isActive }) =>
+                      isActive
+                        ? "fs-5 text-warning px-3"
+                        : "fs-5 text-white text-decoration-none px-3"
+                    }
+                  >
+                    Manage Items
+                  </NavLink>
+                  <NavLink
+                    as={Link}
+                    to="/additems"
+                    className={({ isActive }) =>
+                      isActive
+                        ? "fs-5 text-warning px-3"
+                        : "fs-5 text-white text-decoration-none px-3"
+                    }
+                  >
+                    Add Items
+                  </NavLink>
+                  <NavLink
+                    as={Link}
+                    to="/order"
+                    className={({ isActive }) =>
+                      isActive
+                        ? "fs-5 text-warning px-3"
+                        : "fs-5 text-white text-decoration-none px-3"
+                    }
+                  >
+                    My items
+                  </NavLink>
+                  <NavLink
+                    onClick={logout}
+                    to="/signout"
+                    as={Link}
+                    className={({ isActive }) =>
+                      isActive
+                        ? "fs-5 text-warning text-decoration-none bg-primary px-2"
+                        : "fs-5 text-white text-decoration-none bg-primary  px-2"
+                    }
+                  >
+                    SignOut
+                  </NavLink>
+                </>
+              ) : (
+                <NavLink
+                  as={Link}
+                  to="/login"
+                  className={({ isActive }) =>
+                    isActive
+                      ? "fs-5 text-warning px-3"
+                      : "fs-5 text-white text-decoration-none px-3"
+                  }
+                >
+                  SignIn
+                </NavLink>
+              )}
             </Nav>
           </Navbar.Collapse>
         </Container>

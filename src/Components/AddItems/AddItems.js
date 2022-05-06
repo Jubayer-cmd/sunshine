@@ -1,9 +1,13 @@
 import axios from "axios";
 import React from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
+import auth from "./../../firebase.init";
 
 const AddItems = () => {
+  const [user] = useAuthState(auth);
   const handleSubmit = (event) => {
     event.preventDefault();
+    const email = user.email;
     const name = event.target.name.value;
     const price = event.target.price.value;
     const quantity = event.target.quantity.value;
@@ -11,7 +15,15 @@ const AddItems = () => {
     const images = event.target.images.value;
     const supplier = event.target.supplier.value;
 
-    const gadgets = { name, price, quantity, description, images, supplier };
+    const gadgets = {
+      name,
+      price,
+      quantity,
+      description,
+      images,
+      supplier,
+      email,
+    };
 
     axios
       .post("https://evening-mesa-55779.herokuapp.com/additems", gadgets)

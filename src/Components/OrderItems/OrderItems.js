@@ -1,15 +1,8 @@
 import React from "react";
 import { Button } from "react-bootstrap";
-import { useNavigate } from "react-router-dom";
 
-const ManageItem = ({ product, setProduct }) => {
-  const { _id, name, supplier, price, quantity, images, description } = product;
-  const navigate = useNavigate();
-
-  const handleAddItems = () => {
-    navigate("/additems");
-  };
-
+const OrderItems = ({ gadget, setGadgets }) => {
+  const { _id, name, supplier, price, quantity, images, description } = gadget;
   const handleDelete = (id) => {
     const proceed = window.confirm("Are you sure?");
     if (proceed) {
@@ -19,8 +12,9 @@ const ManageItem = ({ product, setProduct }) => {
       })
         .then((res) => res.json())
         .then((data) => {
-          const remaining = product.filter((service) => service._id !== id);
-          setProduct(remaining);
+          console.log(data);
+          const remaining = gadget.filter((service) => service._id !== id);
+          setGadgets(remaining);
         });
     }
   };
@@ -36,9 +30,6 @@ const ManageItem = ({ product, setProduct }) => {
         <td>{quantity}</td>
         <td>{supplier}</td>
         <td>
-          <Button onClick={handleAddItems}>Add</Button>
-        </td>
-        <td>
           <Button onClick={() => handleDelete(_id)} className="bg-danger">
             Delete
           </Button>
@@ -48,4 +39,4 @@ const ManageItem = ({ product, setProduct }) => {
   );
 };
 
-export default ManageItem;
+export default OrderItems;

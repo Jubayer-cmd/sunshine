@@ -83,7 +83,7 @@ const Inventory = () => {
       data-aos="fade-up"
       data-aos-delay="400"
     >
-      <div className="card mb-3" style={{ width: "800px" }}>
+      <div className="card mb-3 shadow" style={{ width: "800px" }}>
         <div className="row no-gutters">
           <div className="col-md-4">
             <img src={images} className="card-img" alt="..." />
