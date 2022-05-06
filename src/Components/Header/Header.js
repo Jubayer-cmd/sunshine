@@ -26,8 +26,8 @@ const Header = () => {
                 to="/"
                 className={({ isActive }) =>
                   isActive
-                    ? "fs-5 text-warning px-2"
-                    : "fs-5 text-white text-decoration-none px-2"
+                    ? "fs-5 text-warning px-3"
+                    : "fs-5 text-white text-decoration-none px-3"
                 }
               >
                 Home
@@ -37,8 +37,8 @@ const Header = () => {
                 to="/manage"
                 className={({ isActive }) =>
                   isActive
-                    ? "fs-5 text-warning px-2"
-                    : "fs-5 text-white text-decoration-none px-2"
+                    ? "fs-5 text-warning px-3"
+                    : "fs-5 text-white text-decoration-none px-3"
                 }
               >
                 Manage Items
@@ -48,11 +48,33 @@ const Header = () => {
                 to="/additems"
                 className={({ isActive }) =>
                   isActive
-                    ? "fs-5 text-warning px-2"
-                    : "fs-5 text-white text-decoration-none px-2"
+                    ? "fs-5 text-warning px-3"
+                    : "fs-5 text-white text-decoration-none px-3"
                 }
               >
                 Add Items
+              </NavLink>
+              <NavLink
+                as={Link}
+                to="/blogs"
+                className={({ isActive }) =>
+                  isActive
+                    ? "fs-5 text-warning px-3"
+                    : "fs-5 text-white text-decoration-none px-3"
+                }
+              >
+                Blogs
+              </NavLink>
+              <NavLink
+                as={Link}
+                to="/register"
+                className={({ isActive }) =>
+                  isActive
+                    ? "fs-5 text-warning px-3"
+                    : "fs-5 text-white text-decoration-none px-3"
+                }
+              >
+                SignUp
               </NavLink>
             </Nav>
           </Navbar.Collapse>

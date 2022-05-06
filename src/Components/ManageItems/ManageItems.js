@@ -10,7 +10,6 @@ const ManageItems = () => {
       style={{ minHeight: "100vh" }}
       className="text-center"
       data-aos="fade-up"
-      data-aos-delay="400"
     >
       <h1>Manage Items</h1>
       <Table striped bordered hover responsive size="sm">
