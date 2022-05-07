@@ -1,7 +1,7 @@
-import React from "react";
+import axios from "axios";
+import React, { useRef } from "react";
 import { Button, Spinner } from "react-bootstrap";
 import {
-  useAuthState,
   useSendPasswordResetEmail,
   useSignInWithEmailAndPassword,
   useSignInWithGoogle,
@@ -11,9 +11,9 @@ import { toast } from "react-toastify";
 import auth from "./../../firebase.init";
 
 const Signin = () => {
-  const [user] = useAuthState(auth);
   let ErrorOccur;
-  const [signInWithEmailAndPassword, loading, error] =
+  const emailRef = useRef("");
+  const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
   const [signInWithGoogle] = useSignInWithGoogle(auth);
   const [sendPasswordResetEmail, updating] = useSendPasswordResetEmail(auth);
@@ -23,6 +23,7 @@ const Signin = () => {
   let from = location.state?.from?.pathname || "/";
   if (user) {
     navigate(from, { replace: true });
+  } else {
   }
 
   if (error) {
@@ -33,21 +34,26 @@ const Signin = () => {
     signInWithGoogle();
   };
 
-  const handleLogin = (event) => {
+  const handleLogin = async (event) => {
     event.preventDefault();
     const email = event.target.email.value;
     const password = event.target.password.value;
-    signInWithEmailAndPassword(email, password);
+    await signInWithEmailAndPassword(email, password);
+
+    const { data } = await axios.post("http://localhost:5000/login", { email });
+    localStorage.setItem("accessToken", data.accessToken);
   };
-  const resetPassword = (event) => {
-    const email = event.target.email.value;
+
+  const resetPassword = async () => {
+    const email = emailRef.current.value;
     if (email) {
-      sendPasswordResetEmail(email);
+      await sendPasswordResetEmail(email);
       toast("Email sent!");
     } else {
       toast("please enter your Email address!");
     }
   };
+
   return (
     <div
       className="d-flex justify-content-center m-5"
@@ -72,12 +78,12 @@ const Signin = () => {
               <form className="text-center m-2" onSubmit={handleLogin}>
                 <h1 className="text-primary">Login</h1>
                 <input
+                  ref={emailRef}
                   className=" w-100 mb-2 p-2"
                   type="email"
                   name="email"
                   id=""
                   placeholder="E-mail"
-                  required
                 />{" "}
                 <br />
                 <input
@@ -86,7 +92,6 @@ const Signin = () => {
                   name="password"
                   id=""
                   placeholder="Password"
-                  required
                 />{" "}
                 <br />
                 <input
@@ -94,7 +99,6 @@ const Signin = () => {
                   type="submit"
                   value="Login"
                 />
-                {ErrorOccur}
                 {loading && (
                   <Spinner animation="border" role="status">
                     <span className="visually-hidden">Loading...</span>
@@ -105,6 +109,7 @@ const Signin = () => {
                     <span className="visually-hidden">updating...</span>
                   </Spinner>
                 )}
+                {ErrorOccur}
                 <p>OR</p>
                 <Button onClick={signingoogle} className="btn btn-info mb-2">
                   <i className="bi bi-google m-2"></i>SignIn
@@ -113,7 +118,7 @@ const Signin = () => {
                   New user here? <Link to={"/register"}>Register</Link>
                 </p>
               </form>
-              <p>
+              <p className="text-center">
                 Forget Password?{" "}
                 <button
                   className="btn btn-link text-primary pe-auto text-decoration-none"

@@ -1,6 +1,6 @@
 import { signOut } from "firebase/auth";
 import React from "react";
-import { Container, Nav, Navbar } from "react-bootstrap";
+import { Button, Container, Nav, Navbar } from "react-bootstrap";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { Link, NavLink } from "react-router-dom";
 import { toast } from "react-toastify";
@@ -88,18 +88,7 @@ const Header = () => {
                   >
                     My items
                   </NavLink>
-                  <NavLink
-                    onClick={logout}
-                    to="/signout"
-                    as={Link}
-                    className={({ isActive }) =>
-                      isActive
-                        ? "fs-5 text-warning text-decoration-none bg-primary px-2"
-                        : "fs-5 text-white text-decoration-none bg-primary  px-2"
-                    }
-                  >
-                    SignOut
-                  </NavLink>
+                  <Button onClick={logout}>SignOut</Button>
                 </>
               ) : (
                 <NavLink

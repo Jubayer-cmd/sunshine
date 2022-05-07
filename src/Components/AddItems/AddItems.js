@@ -1,6 +1,7 @@
 import axios from "axios";
 import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
+import { toast } from "react-toastify";
 import auth from "./../../firebase.init";
 
 const AddItems = () => {
@@ -30,7 +31,7 @@ const AddItems = () => {
       .then((response) => {
         const { data } = response;
         if (data.insertedId) {
-          alert("added");
+          toast("Item has been added");
           event.target.reset();
         }
       });
