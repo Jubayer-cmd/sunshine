@@ -2,7 +2,7 @@ import React from "react";
 
 const Blogs = () => {
   return (
-    <div style={{ height: "100vh" }}>
+    <div>
       <h3 className="text-center text-primary">
         Difference between Node.JS and Javascript
       </h3>
