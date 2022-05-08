@@ -14,20 +14,23 @@ const Signin = () => {
   let ErrorOccur;
 
   const emailRef = useRef("");
-  const [signInWithEmailAndPassword, user, loading, error] =
+  const [signInWithEmailAndPassword, loading, error] =
     useSignInWithEmailAndPassword(auth);
   const [signInWithGoogle] = useSignInWithGoogle(auth);
   const [sendPasswordResetEmail, updating] = useSendPasswordResetEmail(auth);
   const navigate = useNavigate();
+
   const location = useLocation();
   let from = location.state?.from?.pathname || "/";
+
   if (error) {
     ErrorOccur = <p className="text-danger">Error: {error?.message}</p>;
   }
 
-  if (user) {
-    navigate(from, { replace: true });
-  }
+  const handlesignin = async () => {
+    await signInWithGoogle();
+    navigate("/");
+  };
 
   const handleLogin = async (event) => {
     event.preventDefault();
@@ -110,10 +113,7 @@ const Signin = () => {
                 )}
                 {ErrorOccur}
                 <p>OR</p>
-                <Button
-                  onClick={() => signInWithGoogle()}
-                  className="btn btn-info mb-2"
-                >
+                <Button onClick={handlesignin} className="btn btn-info mb-2">
                   <i className="bi bi-google m-2"></i>SignIn
                 </Button>
                 <p>

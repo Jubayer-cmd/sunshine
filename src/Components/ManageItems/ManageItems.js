@@ -11,7 +11,7 @@ const ManageItems = () => {
       className="text-center"
       data-aos="fade-up"
     >
-      <h1>Manage Items</h1>
+      <h1 className="text-primary">Manage Items</h1>
       <Table striped bordered hover responsive size="sm">
         <thead>
           <tr>
