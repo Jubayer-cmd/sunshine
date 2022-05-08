@@ -2,12 +2,16 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Button } from "react-bootstrap";
 import CountUp from "react-countup";
+import { useAuthState } from "react-firebase-hooks/auth";
 import { useNavigate } from "react-router-dom";
 import ReactVisibilitySensor from "react-visibility-sensor";
+import auth from "../../firebase.init";
 import Products from "../Products/Products";
 import "./Home.css";
 const Home = () => {
   const [products, setProducts] = useState([]);
+  const [user] = useAuthState(auth);
+  console.log(user);
   const navigate = useNavigate();
   const navigateToManage = () => {
     navigate("/manage");

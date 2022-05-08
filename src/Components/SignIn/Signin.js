@@ -12,6 +12,7 @@ import auth from "./../../firebase.init";
 
 const Signin = () => {
   let ErrorOccur;
+
   const emailRef = useRef("");
   const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
@@ -19,20 +20,14 @@ const Signin = () => {
   const [sendPasswordResetEmail, updating] = useSendPasswordResetEmail(auth);
   const navigate = useNavigate();
   const location = useLocation();
-
   let from = location.state?.from?.pathname || "/";
-  if (user) {
-    navigate(from, { replace: true });
-  } else {
-  }
-
   if (error) {
     ErrorOccur = <p className="text-danger">Error: {error?.message}</p>;
   }
 
-  const signingoogle = () => {
-    signInWithGoogle();
-  };
+  if (user) {
+    navigate(from, { replace: true });
+  }
 
   const handleLogin = async (event) => {
     event.preventDefault();
@@ -45,6 +40,7 @@ const Signin = () => {
       { email }
     );
     localStorage.setItem("accessToken", data.accessToken);
+    navigate(from, { replace: true });
   };
 
   const resetPassword = async () => {
@@ -114,7 +110,10 @@ const Signin = () => {
                 )}
                 {ErrorOccur}
                 <p>OR</p>
-                <Button onClick={signingoogle} className="btn btn-info mb-2">
+                <Button
+                  onClick={() => signInWithGoogle()}
+                  className="btn btn-info mb-2"
+                >
                   <i className="bi bi-google m-2"></i>SignIn
                 </Button>
                 <p>
