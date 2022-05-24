@@ -49,7 +49,8 @@ const Inventory = () => {
 
   const handlesubmit = (event) => {
     event.preventDefault();
-    const newQuantity = event.target.quantity.value;
+    const totalQuantity = event.target.quantity.value;
+    const newQuantity = parseInt(quantity) + parseInt(totalQuantity);
     const makeQuantity = { newQuantity };
     console.log(makeQuantity);
     //send data to the server

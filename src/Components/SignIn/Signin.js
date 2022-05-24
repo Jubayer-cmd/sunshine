@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import { Button, Spinner } from "react-bootstrap";
 import {
   useSendPasswordResetEmail,
@@ -8,28 +8,37 @@ import {
 } from "react-firebase-hooks/auth";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import Loading from "../Loading/Loading";
 import auth from "./../../firebase.init";
 
 const Signin = () => {
   let ErrorOccur;
 
   const emailRef = useRef("");
-  const [signInWithEmailAndPassword, loading, error] =
+  const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
-  const [signInWithGoogle] = useSignInWithGoogle(auth);
+  const [signInWithGoogle, gUser, gloading] = useSignInWithGoogle(auth);
   const [sendPasswordResetEmail, updating] = useSendPasswordResetEmail(auth);
-  const navigate = useNavigate();
 
+  const navigate = useNavigate();
   const location = useLocation();
   let from = location.state?.from?.pathname || "/";
 
+  useEffect(() => {
+    if (user || gUser) {
+      navigate(from, { replace: true });
+    }
+  }, [user, gUser, from, navigate]);
+
+  if (gloading) {
+    return <Loading></Loading>;
+  }
   if (error) {
     ErrorOccur = <p className="text-danger">Error: {error?.message}</p>;
   }
 
-  const handlesignin = async () => {
+  const handlesignin = async (event) => {
     await signInWithGoogle();
-    navigate("/");
   };
 
   const handleLogin = async (event) => {

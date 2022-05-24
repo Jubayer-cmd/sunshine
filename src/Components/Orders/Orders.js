@@ -8,6 +8,7 @@ import auth from "./../../firebase.init";
 const Orders = () => {
   const [user] = useAuthState(auth);
   const [gadgets, setGadgets] = useState([]);
+
   useEffect(() => {
     const getOrders = async () => {
       const email = user.email;
