@@ -1,20 +1,26 @@
 import React from "react";
 import { Spinner } from "react-bootstrap";
-import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
+import {
+  useCreateUserWithEmailAndPassword,
+  useUpdateProfile,
+} from "react-firebase-hooks/auth";
 import { Link, useNavigate } from "react-router-dom";
 import auth from "./../../firebase.init";
 import "./signup.module.css";
 const Sigup = () => {
   const [createUserWithEmailAndPassword, loading, error] =
-    useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
+    useCreateUserWithEmailAndPassword(auth);
+  const [updateProfile] = useUpdateProfile(auth);
 
   const navigate = useNavigate();
 
   const handleRegister = async (event) => {
     event.preventDefault();
     const email = event.target.email.value;
+    const name = event.target.name.value;
     const password = event.target.password.value;
     await createUserWithEmailAndPassword(email, password);
+    await updateProfile({ displayName: name });
     navigate("/");
   };
   return (

@@ -12,7 +12,7 @@ const Footer = () => {
             <div className="row">
               <div className="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
                 <h6 className="text-uppercase mb-4 font-weight-bold">
-                  GADGET-X
+                  EDU-TECH
                 </h6>
                 <p>
                   The term in brief: Warehouse technology deals with the storage
@@ -141,7 +141,7 @@ const Footer = () => {
         >
           © 2022 Copyright:{" "}
           <a className="text-white" href="/">
-            gadgetx.com
+            edutech.com
           </a>
         </div>
       </footer>

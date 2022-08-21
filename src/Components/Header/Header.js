@@ -26,7 +26,7 @@ const Header = () => {
               }
               alt="jfdh"
             />{" "}
-            Gadget-X
+            EDU-TECH
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
@@ -56,29 +56,6 @@ const Header = () => {
               </NavLink>
               {user ? (
                 <>
-                  {" "}
-                  <NavLink
-                    as={Link}
-                    to="/manage"
-                    className={({ isActive }) =>
-                      isActive
-                        ? "fs-5 text-warning px-3"
-                        : "fs-5 text-white text-decoration-none px-3"
-                    }
-                  >
-                    Manage Items
-                  </NavLink>
-                  <NavLink
-                    as={Link}
-                    to="/additems"
-                    className={({ isActive }) =>
-                      isActive
-                        ? "fs-5 text-warning px-3"
-                        : "fs-5 text-white text-decoration-none px-3"
-                    }
-                  >
-                    Add Items
-                  </NavLink>
                   <NavLink
                     as={Link}
                     to="/order"
@@ -88,9 +65,12 @@ const Header = () => {
                         : "fs-5 text-white text-decoration-none px-3"
                     }
                   >
-                    My items
+                    DashBoard
                   </NavLink>
-                  <Button onClick={logout}>SignOut</Button>
+                  <p className="px-3 text-white fs-5">
+                    {user?.displayName || "user name not found"}
+                  </p>
+                  <Button onClick={logout}>logout</Button>
                 </>
               ) : (
                 <NavLink

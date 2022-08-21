@@ -1,27 +1,58 @@
-import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Button } from "react-bootstrap";
 import CountUp from "react-countup";
-import { useAuthState } from "react-firebase-hooks/auth";
-import { useNavigate } from "react-router-dom";
 import ReactVisibilitySensor from "react-visibility-sensor";
-import auth from "../../firebase.init";
 import Products from "../Products/Products";
 import "./Home.css";
 const Home = () => {
-  const [products, setProducts] = useState([]);
-  const [user] = useAuthState(auth);
-  console.log(user);
-  const navigate = useNavigate();
-  const navigateToManage = () => {
-    navigate("/manage");
-  };
-
-  useEffect(() => {
-    axios
-      .get("https://evening-mesa-55779.herokuapp.com/inventory")
-      .then((response) => setProducts(response.data));
-  }, []);
+  const products = [
+    {
+      name: "Learn c++",
+      image:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTizMpUiB6js499mrIIAd3RJKX00T4dNDq8gHaVuoLhJxm5u0DEXLZXAkZQ0AJ1PpuXkns&usqp=CAU",
+      price: "5000",
+      duration: "4 months",
+      constructor: "Abudul Hamid",
+    },
+    {
+      name: "Learn HTML",
+      image: "https://webbynat.files.wordpress.com/2016/03/html2.jpg",
+      price: "3000",
+      duration: "2 months",
+      constructor: "Abudul Hamid",
+    },
+    {
+      name: "Learn CSS",
+      image:
+        "https://www.oxfordwebstudio.com/user/pages/06.da-li-znate/sta-je-css/sta-je-css.png",
+      price: "5000",
+      duration: "3 months",
+      constructor: "Abudul Hamid",
+    },
+    {
+      name: "Learn JavaScript",
+      image: "https://cdn.geekboots.com/geek/javascript-meta-1652702081069.jpg",
+      price: "9000",
+      duration: "6 months",
+      constructor: "Abudul Hamid",
+    },
+    {
+      name: "Learn Node",
+      image:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVUfSd1t2HfBWzG92U3iS-kkTHGaOm-7pozYrGy4X6iHSX6sYFhOLr7gegHM8g3P2mmOQ&usqp=CAU",
+      price: "6000",
+      duration: "4 months",
+      constructor: "Abudul Hamid",
+    },
+    {
+      name: "Learn PHP",
+      image:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCdBuTGbnznrEGGTy4dmoapOCxZ-7pg9i2a1BKE0J50UFjip-Q2iqEzwGqY1cZaGTAVps&usqp=CAU",
+      price: "7000",
+      duration: "7 months",
+      constructor: "Abudul Hamid",
+    },
+  ];
 
   return (
     <div>
@@ -182,11 +213,6 @@ const Home = () => {
           {products.slice(0, 6).map((product) => (
             <Products product={product}></Products>
           ))}
-        </div>
-        <div className="text-center mt-5">
-          <Button className="bg-success" onClick={navigateToManage}>
-            Manage Inventories
-          </Button>
         </div>
       </section>
 
